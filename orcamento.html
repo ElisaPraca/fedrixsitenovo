@@ -11,7 +11,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- FontAwesome para Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -25,7 +25,8 @@
                     fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
                         brand: { 500: '#22c55e', 600: '#16a34a', 900: '#14532d' },
-                        accent: '#25D366'
+                        accent: '#25D366',
+                        dark: { 800: '#1e293b', 900: '#0f172a', 950: '#020617' }
                     }
                 }
             }
@@ -33,10 +34,16 @@
     </script>
 
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
         .hero-bg {
-            background: linear-gradient(rgba(20, 83, 45, 0.9), rgba(15, 23, 42, 0.95)),
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)),
                         url('https://images.unsplash.com/photo-1584820927498-cafe2c11866e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            background-attachment: fixed;
+        }
+        .section-bg {
+            background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 24px 24px;
         }
         .whatsapp-pulse { animation: pulse-green 2s infinite; }
         @keyframes pulse-green {
@@ -44,71 +51,259 @@
             70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
+        .floating { animation: float 3s ease-in-out infinite; }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Botão Flutuante do WhatsApp */
+        .float-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 50;
+        }
     </style>
 </head>
-<body class="bg-gray-900">
+<body class="bg-dark-900 text-gray-200 antialiased selection:bg-brand-500 selection:text-white">
 
-    <main class="hero-bg min-h-screen flex items-center justify-center py-12 px-4">
-        <div class="max-w-3xl w-full text-center">
+    <!-- Header / Navbar -->
+    <header class="fixed w-full top-0 z-50 bg-dark-900/80 backdrop-blur-lg border-b border-white/5 transition-all py-3">
+        <div class="container mx-auto px-4 md:px-6 flex justify-center items-center">
+            <img src="/logo-fedrix.png" alt="Fedrix Logo" class="h-12 w-auto">
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="hero-bg min-h-[100svh] flex items-center justify-center pt-24 pb-12 px-4 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-dark-900 pointer-events-none"></div>
+        <div class="max-w-4xl w-full text-center relative z-10">
             
-            <!-- Logo/Marca -->
-            <div class="mb-10 inline-flex items-center gap-4 bg-white/5 backdrop-blur-md p-4 rounded-3xl border border-white/10 shadow-2xl">
-                <div class="bg-brand-500 p-3 rounded-2xl text-white">
-                    <i class="fa-solid fa-bug-slash text-4xl"></i>
-                </div>
-                <div class="text-left pr-4">
-                    <h1 class="text-white text-3xl font-extrabold tracking-tighter leading-none">FEDRIX</h1>
-                    <p class="text-brand-500 text-xs font-bold uppercase tracking-widest mt-1">Controle de Pragas</p>
-                </div>
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-500 text-sm font-semibold mb-8 floating backdrop-blur-sm">
+                <span class="relative flex h-2.5 w-2.5">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-500 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-500"></span>
+                </span>
+                Atendimento Imediato em São Paulo e Região
             </div>
 
             <!-- Título Principal -->
-            <h2 class="text-5xl md:text-7xl font-black text-white mb-6 leading-tight tracking-tight">
-                Ambiente Livre de <span class="text-brand-500">Pragas.</span>
+            <h2 class="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 leading-[1.1] tracking-tight">
+                Elimine as Pragas <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-emerald-300">Hoje Mesmo.</span>
             </h2>
             
-            <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
-                Atendimento emergencial para <strong class="text-white">Dedetização</strong> e <strong class="text-white">Desentupimento</strong>. Orçamento grátis agora mesmo.
+            <p class="text-lg md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                Pare de sofrer com invasores. Nossa equipe chega em até <strong class="text-white font-semibold">40 minutos</strong> para resolver seu problema com garantia total.
             </p>
 
-            <!-- Serviços Rápidos -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-                <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-5 rounded-2xl text-white hover:bg-white/10 transition-all">
-                    <i class="fa-solid fa-vial-circle-check text-brand-500 text-2xl mb-3"></i>
-                    <p class="font-bold">Dedetização</p>
-                </div>
-                <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-5 rounded-2xl text-white hover:bg-white/10 transition-all">
-                    <i class="fa-solid fa-house-shield text-brand-500 text-2xl mb-3"></i>
-                    <p class="font-bold">Residencial</p>
-                </div>
-                <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-5 rounded-2xl text-white hover:bg-white/10 transition-all">
-                    <i class="fa-solid fa-faucet-drip text-brand-500 text-2xl mb-3"></i>
-                    <p class="font-bold">Desentupimento</p>
-                </div>
+            <!-- Botão de Ação Principal -->
+            <div class="relative group max-w-md mx-auto mb-16">
+                <a href="https://wa.me/5511949251470" target="_blank" 
+                   class="whatsapp-pulse flex items-center justify-center gap-4 bg-accent hover:bg-green-500 text-white py-6 px-8 md:py-8 md:px-10 rounded-2xl font-black text-xl md:text-3xl transition-all transform hover:-translate-y-1 active:scale-95 shadow-[0_20px_50px_rgba(37,211,102,0.4)]">
+                    <i class="fa-brands fa-whatsapp text-4xl md:text-5xl"></i>
+                    SOLICITAR VISITA GRÁTIS
+                </a>
+                <p class="mt-6 text-brand-500 font-bold flex justify-center items-center gap-4 uppercase tracking-tighter text-sm">
+                    <span><i class="fa-solid fa-check-double mr-1"></i> Sem Compromisso</span>
+                    <span><i class="fa-solid fa-shield-virus mr-1"></i> 100% Seguro</span>
+                </p>
             </div>
 
-            <!-- Botão de Ação -->
-            <div class="relative group max-w-md mx-auto">
-                <a href="https://wa.me/5511949251470" target="_blank" 
-                   class="whatsapp-pulse flex items-center justify-center gap-4 bg-accent hover:bg-green-500 text-white py-6 px-10 rounded-full font-extrabold text-2xl transition-all transform hover:-translate-y-1 active:scale-95 shadow-2xl">
-                    <i class="fa-brands fa-whatsapp text-4xl"></i>
-                    ORÇAMENTO VIA WHATSAPP
-                </a>
-                <div class="mt-6 flex justify-center items-center gap-6 text-brand-500 font-bold text-sm uppercase tracking-tighter">
-                    <span><i class="fa-solid fa-bolt mr-2"></i> Rápido</span>
-                    <span><i class="fa-solid fa-shield mr-2"></i> Garantia</span>
-                    <span><i class="fa-solid fa-certificate mr-2"></i> Seguro</span>
+            <!-- Prova Social Imediata -->
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 mt-12 border-t border-white/10 pt-12">
+                <div class="flex items-center gap-3">
+                    <div class="flex -space-x-3">
+                        <img src="https://i.pravatar.cc/100?u=1" class="h-10 w-10 rounded-full border-2 border-dark-900" alt="">
+                        <img src="https://i.pravatar.cc/100?u=2" class="h-10 w-10 rounded-full border-2 border-dark-900" alt="">
+                        <img src="https://i.pravatar.cc/100?u=3" class="h-10 w-10 rounded-full border-2 border-dark-900" alt="">
+                    </div>
+                    <div class="text-left">
+                        <p class="text-white font-bold text-sm">+2.400 Atendimentos</p>
+                        <div class="flex text-yellow-500 text-[10px]">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-12 w-px bg-white/10 hidden md:block"></div>
+                <div class="text-left">
+                    <p class="text-gray-400 text-xs uppercase font-bold tracking-widest">Certificações</p>
+                    <div class="flex gap-4 mt-1 opacity-50 grayscale">
+                        <i class="fa-solid fa-award text-xl text-white"></i>
+                        <i class="fa-solid fa-certificate text-xl text-white"></i>
+                    </div>
                 </div>
             </div>
 
         </div>
     </main>
 
-    <!-- Rodapé Minimalista -->
-    <footer class="bg-gray-950 py-8 text-center border-t border-white/5">
-        <p class="text-gray-500 text-sm font-medium">
-            &copy; <span id="year"></span> Fedrix Controle de Pragas. Todos os direitos reservados.
-        </p>
+    <!-- Urgência / Serviços -->
+    <section id="servicos" class="py-24 bg-dark-950 section-bg">
+        <div class="container mx-auto px-4">
+            <div class="bg-brand-500/5 border border-brand-500/20 rounded-[3rem] p-8 md:p-16 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-8 opacity-10">
+                    <i class="fa-solid fa-triangle-exclamation text-9xl text-brand-500"></i>
+                </div>
+                
+                <div class="relative z-10">
+                    <h2 class="text-3xl md:text-5xl font-black text-white mb-8">O que você precisa resolver <span class="text-brand-500 italic">AGORA?</span></h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <a href="https://wa.me/5511949251470?text=Urgente:%20Preciso%20de%20Dedetização" target="_blank" class="flex items-center justify-between bg-dark-900 p-6 rounded-2xl border border-white/5 hover:border-brand-500 transition-all group">
+                            <span class="text-xl font-bold text-white group-hover:text-brand-500">Dedetização</span>
+                            <i class="fa-solid fa-chevron-right text-gray-600 group-hover:text-brand-500"></i>
+                        </a>
+                        <a href="https://wa.me/5511949251470?text=Urgente:%20Preciso%20de%20Desentupimento" target="_blank" class="flex items-center justify-between bg-dark-900 p-6 rounded-2xl border border-white/5 hover:border-brand-500 transition-all group">
+                            <span class="text-xl font-bold text-white group-hover:text-brand-500">Desentupimento</span>
+                            <i class="fa-solid fa-chevron-right text-gray-600 group-hover:text-brand-500"></i>
+                        </a>
+                        <a href="https://wa.me/5511949251470?text=Urgente:%20Preciso%20de%20Desratização" target="_blank" class="flex items-center justify-between bg-dark-900 p-6 rounded-2xl border border-white/5 hover:border-brand-500 transition-all group">
+                            <span class="text-xl font-bold text-white group-hover:text-brand-500">Ratos / Roedores</span>
+                            <i class="fa-solid fa-chevron-right text-gray-600 group-hover:text-brand-500"></i>
+                        </a>
+                        <a href="https://wa.me/5511949251470?text=Urgente:%20Preciso%20de%20Descupinização" target="_blank" class="flex items-center justify-between bg-dark-900 p-6 rounded-2xl border border-white/5 hover:border-brand-500 transition-all group">
+                            <span class="text-xl font-bold text-white group-hover:text-brand-500">Cupins</span>
+                            <i class="fa-solid fa-chevron-right text-gray-600 group-hover:text-brand-500"></i>
+                        </a>
+                        <a href="https://wa.me/5511949251470?text=Urgente:%20Limpeza%20de%20Caixa%20D'água" target="_blank" class="flex items-center justify-between bg-dark-900 p-6 rounded-2xl border border-white/5 hover:border-brand-500 transition-all group">
+                            <span class="text-xl font-bold text-white group-hover:text-brand-500">Caixa D'água</span>
+                            <i class="fa-solid fa-chevron-right text-gray-600 group-hover:text-brand-500"></i>
+                        </a>
+                        <a href="https://wa.me/5511949251470" target="_blank" class="flex items-center justify-between bg-brand-500 p-6 rounded-2xl border border-brand-500 hover:bg-brand-600 transition-all group">
+                            <span class="text-xl font-black text-white">Outro Problema</span>
+                            <i class="fa-solid fa-comment-dots text-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-24 bg-dark-950">
+        <div class="container mx-auto px-4 md:px-6 max-w-3xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-white mb-4">Dúvidas Frequentes</h2>
+                <p class="text-gray-400">Tudo o que você precisa saber antes de nos contratar.</p>
+            </div>
+
+            <div class="space-y-4">
+                <details class="group bg-dark-800/50 border border-white/5 rounded-2xl p-6 open:bg-dark-800 transition-colors cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-white text-lg">
+                        Preciso sair de casa durante a dedetização?
+                        <span class="transition group-open:rotate-180">
+                            <i class="fa-solid fa-chevron-down text-brand-500"></i>
+                        </span>
+                    </summary>
+                    <p class="text-gray-400 mt-4 leading-relaxed">
+                        Depende do tipo de praga e do método utilizado. Para baratas e formigas (aplicação em gel), não é necessário sair de casa. Para pulverização contra insetos voadores, recomendamos que pessoas e pets saiam do ambiente por algumas horas.
+                    </p>
+                </details>
+
+                <details class="group bg-dark-800/50 border border-white/5 rounded-2xl p-6 open:bg-dark-800 transition-colors cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-white text-lg">
+                        Os produtos são seguros para pets (cães e gatos)?
+                        <span class="transition group-open:rotate-180">
+                            <i class="fa-solid fa-chevron-down text-brand-500"></i>
+                        </span>
+                    </summary>
+                    <p class="text-gray-400 mt-4 leading-relaxed">
+                        Sim, utilizamos produtos regulamentados e seguros. Apenas pedimos que os animais fiquem isolados da área tratada pelo tempo de secagem recomendado (geralmente de 4 a 6 horas).
+                    </p>
+                </details>
+
+                <details class="group bg-dark-800/50 border border-white/5 rounded-2xl p-6 open:bg-dark-800 transition-colors cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-white text-lg">
+                        Vocês quebram paredes para desentupir?
+                        <span class="transition group-open:rotate-180">
+                            <i class="fa-solid fa-chevron-down text-brand-500"></i>
+                        </span>
+                    </summary>
+                    <p class="text-gray-400 mt-4 leading-relaxed">
+                        Não. Utilizamos equipamentos de ponta como máquinas roto-rooter e hidrojateamento que desobstruem a tubulação internamente, sem necessidade de quebra-quebra, preservando o piso e as paredes.
+                    </p>
+                </details>
+
+                <details class="group bg-dark-800/50 border border-white/5 rounded-2xl p-6 open:bg-dark-800 transition-colors cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-white text-lg">
+                        Como funciona a garantia do serviço?
+                        <span class="transition group-open:rotate-180">
+                            <i class="fa-solid fa-chevron-down text-brand-500"></i>
+                        </span>
+                    </summary>
+                    <p class="text-gray-400 mt-4 leading-relaxed">
+                        Todos os nossos serviços contam com certificado de garantia. O prazo varia de 3 a 6 meses dependendo do tipo de praga e do ambiente tratado. Se o problema voltar, faremos o repasse sem custo.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Final -->
+    <section class="py-24 bg-dark-900 border-t border-white/5">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-6xl font-black text-white mb-8">Não espere a infestação <br/><span class="text-brand-500">piorar.</span></h2>
+            <p class="text-gray-400 text-xl mb-12 max-w-2xl mx-auto">Orçamentos enviados em menos de 5 minutos pelo WhatsApp. Atendimento 24h para emergências.</p>
+            <a href="https://wa.me/5511949251470" target="_blank" class="inline-flex items-center justify-center gap-4 bg-accent hover:bg-green-500 text-white py-6 px-12 rounded-2xl font-black text-2xl transition-all shadow-[0_20px_40px_rgba(37,211,102,0.3)]">
+                <i class="fa-brands fa-whatsapp text-4xl"></i> FALAR COM ESPECIALISTA
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-950 pt-16 pb-8 border-t border-white/5">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="/logo-fedrix.png" alt="Fedrix Logo" class="h-10 w-auto">
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-sm">Especialistas em controle de pragas urbanas e desentupimento. Protegendo sua casa e seu negócio com eficiência e segurança.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 bg-dark-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-brand-500 hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="h-10 w-10 bg-dark-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-brand-500 hover:text-white transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">Serviços</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#servicos" class="hover:text-brand-500 transition-colors">Dedetização Geral</a></li>
+                        <li><a href="#servicos" class="hover:text-brand-500 transition-colors">Desratização</a></li>
+                        <li><a href="#servicos" class="hover:text-brand-500 transition-colors">Descupinização</a></li>
+                        <li><a href="#servicos" class="hover:text-brand-500 transition-colors">Desentupimento</a></li>
+                        <li><a href="#servicos" class="hover:text-brand-500 transition-colors">Limpeza de Reservatórios</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-6">Contato</h4>
+                    <ul class="space-y-4 text-gray-400 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-phone text-brand-500 mt-1"></i>
+                            <div>
+                                <p class="font-bold text-white">(11) 94925-1470</p>
+                                <p class="text-xs">Plantão 24 horas</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope text-brand-500 mt-1"></i>
+                            <a href="mailto:contato@fedrix.com.br" class="hover:text-white transition-colors">contato@fedrix.com.br</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            
+            <div class="border-t border-white/5 pt-8 text-center md:flex md:justify-between md:items-center">
+                <p class="text-gray-500 text-sm font-medium mb-4 md:mb-0">
+                    &copy; <span id="year"></span> Fedrix Controle de Pragas. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
     </footer>
 
     <script>
