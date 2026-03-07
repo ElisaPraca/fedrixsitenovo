@@ -30,7 +30,7 @@
     <!-- FontAwesome para Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Tailwind CSS via CDN (Tudo em 1 arquivo) -->
+    <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -51,7 +51,7 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; overflow-x: hidden; background-color: #020617; }
         
-        /* Efeito de Fundo Animado (Waitlist Hero Style) */
+        /* Efeito de Fundo Animado */
         .waitlist-container {
             position: relative;
             width: 100%;
@@ -94,7 +94,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: rgba(34, 197, 94, 0.2);
+            color: rgba(34, 197, 94, 0.8);
+            filter: drop-shadow(0 0 15px rgba(34, 197, 94, 0.6));
         }
 
         .whatsapp-pulse { animation: pulse-green 2s infinite; }
@@ -111,7 +112,7 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Header / Navbar Otimizada -->
+    <!-- Header / Navbar -->
     <header class="fixed w-full top-0 z-50 bg-dark-950/90 backdrop-blur-lg border-b border-white/5 transition-all py-4">
         <div class="container mx-auto px-4 md:px-6 flex justify-center items-center">
             <div class="flex items-center gap-2 text-2xl md:text-3xl font-black tracking-tighter text-white uppercase">
@@ -121,41 +122,33 @@
         </div>
     </header>
 
-    <!-- Hero Section com Efeito Animado -->
+    <!-- Hero Section -->
     <main class="waitlist-container flex items-center justify-center pt-24 pb-12 px-4 relative">
-        <!-- Camada de Animação de Fundo -->
         <div class="hero-visual-layer">
-            <!-- Camada 3 (Fundo) - Elementos de Dedetização -->
             <div class="absolute inset-0 animate-spin-slow">
                 <div class="floating-icon" style="width: 2000px; height: 2000px; font-size: 200px;">
-                    <i class="fa-solid fa-virus-slash opacity-10 absolute" style="top: 20%; left: 30%;"></i>
-                    <i class="fa-solid fa-bug opacity-10 absolute" style="bottom: 25%; right: 20%;"></i>
-                    <i class="fa-solid fa-shield-virus opacity-10 absolute" style="top: 60%; right: 40%;"></i>
+                    <i class="fa-solid fa-virus-slash absolute" style="top: 20%; left: 30%;"></i>
+                    <i class="fa-solid fa-bug absolute" style="bottom: 25%; right: 20%;"></i>
+                    <i class="fa-solid fa-shield-virus absolute" style="top: 60%; right: 40%;"></i>
                 </div>
             </div>
-
-            <!-- Camada 2 (Meio) -->
             <div class="absolute inset-0 animate-spin-slow-reverse">
                 <div class="floating-icon" style="width: 1200px; height: 1200px; font-size: 150px;">
-                    <i class="fa-solid fa-spray-can-sparkles opacity-20 absolute" style="top: 10%; right: 10%;"></i>
-                    <i class="fa-solid fa-biohazard opacity-20 absolute" style="bottom: 15%; left: 15%;"></i>
+                    <i class="fa-solid fa-spray-can-sparkles absolute" style="top: 10%; right: 10%;"></i>
+                    <i class="fa-solid fa-biohazard absolute" style="bottom: 15%; left: 15%;"></i>
                 </div>
             </div>
-
-            <!-- Camada 1 (Frente) -->
             <div class="absolute inset-0 animate-spin-slow">
                 <div class="floating-icon" style="width: 800px; height: 800px; font-size: 100px;">
-                    <i class="fa-solid fa-house-chimney-medical opacity-30 absolute" style="top: 40%; left: 10%;"></i>
-                    <i class="fa-solid fa-hand-sparkles opacity-30 absolute" style="bottom: 30%; right: 10%;"></i>
+                    <i class="fa-solid fa-house-chimney-medical absolute" style="top: 40%; left: 10%;"></i>
+                    <i class="fa-solid fa-hand-sparkles absolute" style="bottom: 30%; right: 10%;"></i>
                 </div>
             </div>
         </div>
 
-        <!-- Gradiente de Sobreposição -->
-        <div class="absolute inset-0 z-10 pointer-events-none bg-gradient-to-t from-dark-950 via-dark-950/80 to-transparent"></div>
+        <div class="absolute inset-0 z-10 pointer-events-none bg-gradient-to-t from-dark-950 via-dark-950/40 to-transparent"></div>
 
         <div class="max-w-4xl w-full text-center relative z-20 flex flex-col items-center">
-            <!-- Etiqueta de Urgência -->
             <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-500 text-xs md:text-sm font-bold uppercase tracking-wider mb-8 backdrop-blur-sm">
                 <span class="relative flex h-2.5 w-2.5">
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-500 opacity-75"></span>
@@ -183,47 +176,47 @@
         </div>
     </main>
 
-    <!-- Urgência / Serviços (Design focado em clique imediato) -->
+    <!-- Imagens Acrescentadas -->
+    <section class="py-12 bg-dark-950">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <img src="/images/rat.png" alt="Desratização" class="rounded-2xl shadow-2xl border border-white/5">
+            <img src="/images/pest.png" alt="Controle de Pragas" class="rounded-2xl shadow-2xl border border-white/5">
+            <img src="/images/sanitization.png" alt="Sanitização" class="rounded-2xl shadow-2xl border border-white/5">
+        </div>
+    </section>
+
+    <!-- Urgência / Serviços -->
     <section id="servicos" class="py-20 bg-dark-950 section-bg border-y border-white/5">
         <div class="container mx-auto px-4 max-w-5xl">
             <div class="bg-gradient-to-br from-dark-900 to-dark-950 border border-brand-500/20 rounded-[2rem] p-6 md:p-12 relative overflow-hidden shadow-2xl">
-                <!-- Detalhe Visual -->
                 <div class="absolute -top-10 -right-10 p-8 opacity-5">
                     <i class="fa-solid fa-triangle-exclamation text-[15rem] text-brand-500"></i>
                 </div>
-                
                 <div class="relative z-10">
                     <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-8 text-center md:text-left">
                         O que você precisa resolver <span class="text-brand-500 italic block sm:inline">AGORA?</span>
                     </h2>
-                    
                     <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
-                        <!-- Cards de Serviço (Clicáveis diretos pro WA) -->
                         <a href="https://wa.me/5511949251470?text=Urgente:%20Preciso%20de%20Dedetização" target="_blank" class="flex flex-col justify-center items-center gap-3 bg-dark-800/50 p-6 md:p-8 rounded-xl border border-white/5 hover:border-brand-500 hover:bg-dark-800 transition-all group cursor-pointer text-center">
                             <i class="fa-solid fa-bug text-3xl md:text-4xl text-gray-500 group-hover:text-brand-500 transition-colors"></i>
                             <span class="text-sm md:text-lg font-bold text-white group-hover:text-brand-500 transition-colors">Dedetização</span>
                         </a>
-
                         <a href="https://wa.me/5511949251470?text=Urgente:%20Preciso%20de%20Desentupimento" target="_blank" class="flex flex-col justify-center items-center gap-3 bg-dark-800/50 p-6 md:p-8 rounded-xl border border-white/5 hover:border-brand-500 hover:bg-dark-800 transition-all group cursor-pointer text-center">
                             <i class="fa-solid fa-wrench text-3xl md:text-4xl text-gray-500 group-hover:text-brand-500 transition-colors"></i>
                             <span class="text-sm md:text-lg font-bold text-white group-hover:text-brand-500 transition-colors">Desentupimento</span>
                         </a>
-
                         <a href="https://wa.me/5511949251470?text=Urgente:%20Preciso%20de%20Desratização" target="_blank" class="flex flex-col justify-center items-center gap-3 bg-dark-800/50 p-6 md:p-8 rounded-xl border border-white/5 hover:border-brand-500 hover:bg-dark-800 transition-all group cursor-pointer text-center">
                             <i class="fa-solid fa-disease text-3xl md:text-4xl text-gray-500 group-hover:text-brand-500 transition-colors"></i>
                             <span class="text-sm md:text-lg font-bold text-white group-hover:text-brand-500 transition-colors">Ratos / Roedores</span>
                         </a>
-
                         <a href="https://wa.me/5511949251470?text=Urgente:%20Preciso%20de%20Descupinização" target="_blank" class="flex flex-col justify-center items-center gap-3 bg-dark-800/50 p-6 md:p-8 rounded-xl border border-white/5 hover:border-brand-500 hover:bg-dark-800 transition-all group cursor-pointer text-center">
                             <i class="fa-solid fa-house-crack text-3xl md:text-4xl text-gray-500 group-hover:text-brand-500 transition-colors"></i>
                             <span class="text-sm md:text-lg font-bold text-white group-hover:text-brand-500 transition-colors">Cupins</span>
                         </a>
-
                         <a href="https://wa.me/5511949251470?text=Urgente:%20Limpeza%20de%20Caixa%20D'água" target="_blank" class="flex flex-col justify-center items-center gap-3 bg-dark-800/50 p-6 md:p-8 rounded-xl border border-white/5 hover:border-brand-500 hover:bg-dark-800 transition-all group cursor-pointer text-center">
                             <i class="fa-solid fa-droplet text-3xl md:text-4xl text-gray-500 group-hover:text-brand-500 transition-colors"></i>
                             <span class="text-sm md:text-lg font-bold text-white group-hover:text-brand-500 transition-colors">Caixa D'água</span>
                         </a>
-
                         <a href="https://wa.me/5511949251470?text=Ol%C3%A1%2C%20tenho%20outro%20problema" target="_blank" class="flex flex-col justify-center items-center gap-3 bg-brand-500/10 p-6 md:p-8 rounded-xl border border-brand-500/50 hover:bg-brand-500 hover:text-white transition-all group cursor-pointer text-center">
                             <i class="fa-solid fa-comment-dots text-3xl md:text-4xl text-brand-500 group-hover:text-white transition-colors"></i>
                             <span class="text-sm md:text-lg font-black text-brand-500 group-hover:text-white transition-colors">Outro Problema</span>
@@ -234,248 +227,116 @@
         </div>
     </section>
 
-    <!-- Benefícios Rápidos (Trust/Social Proof para Conversão) -->
+    <!-- Benefícios -->
     <section class="py-16 bg-dark-900 border-b border-white/5">
-        <div class="container mx-auto px-4 max-w-5xl">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="p-6">
-                    <div class="w-16 h-16 mx-auto bg-brand-500/10 rounded-2xl flex items-center justify-center mb-4 text-brand-500">
-                        <i class="fa-solid fa-truck-fast text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Chegada Rápida</h3>
-                    <p class="text-gray-400 text-sm">Equipes espalhadas estrategicamente para chegar em até 40 minutos em sua residência ou empresa.</p>
+        <div class="container mx-auto px-4 max-w-5xl text-center grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-6">
+                <div class="w-16 h-16 mx-auto bg-brand-500/10 rounded-2xl flex items-center justify-center mb-4 text-brand-500">
+                    <i class="fa-solid fa-truck-fast text-2xl"></i>
                 </div>
-                <div class="p-6">
-                    <div class="w-16 h-16 mx-auto bg-brand-500/10 rounded-2xl flex items-center justify-center mb-4 text-brand-500">
-                        <i class="fa-solid fa-leaf text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Produtos Seguros</h3>
-                    <p class="text-gray-400 text-sm">Utilizamos apenas produtos regulamentados, seguros para o convívio de pets e crianças.</p>
+                <h3 class="text-xl font-bold text-white mb-2">Chegada Rápida</h3>
+                <p class="text-gray-400 text-sm">Equipes espalhadas estrategicamente para chegar em até 40 minutos em sua residência ou empresa.</p>
+            </div>
+            <div class="p-6">
+                <div class="w-16 h-16 mx-auto bg-brand-500/10 rounded-2xl flex items-center justify-center mb-4 text-brand-500">
+                    <i class="fa-solid fa-leaf text-2xl"></i>
                 </div>
-                <div class="p-6">
-                    <div class="w-16 h-16 mx-auto bg-brand-500/10 rounded-2xl flex items-center justify-center mb-4 text-brand-500">
-                        <i class="fa-solid fa-file-contract text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Garantia Comprovada</h3>
-                    <p class="text-gray-400 text-sm">Todo serviço acompanha certificado de garantia e emissão de laudo técnico especializado.</p>
+                <h3 class="text-xl font-bold text-white mb-2">Produtos Seguros</h3>
+                <p class="text-gray-400 text-sm">Utilizamos apenas produtos regulamentados, seguros para o convívio de pets e crianças.</p>
+            </div>
+            <div class="p-6">
+                <div class="w-16 h-16 mx-auto bg-brand-500/10 rounded-2xl flex items-center justify-center mb-4 text-brand-500">
+                    <i class="fa-solid fa-file-contract text-2xl"></i>
                 </div>
+                <h3 class="text-xl font-bold text-white mb-2">Garantia Comprovada</h3>
+                <p class="text-gray-400 text-sm">Todo serviço acompanha certificado de garantia e emissão de laudo técnico especializado.</p>
             </div>
         </div>
     </section>
 
-    <!-- Depoimentos (Prova Social) -->
+    <!-- Depoimentos (6 Avaliações) -->
     <section id="depoimentos" class="py-20 bg-dark-900 border-y border-white/5">
         <div class="container mx-auto px-4 max-w-6xl">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Quem contratou, <span class="text-brand-500">recomenda</span></h2>
                 <p class="text-gray-400">Confira o que nossos clientes dizem sobre o atendimento da Fedrix.</p>
             </div>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Depoimento 1 -->
-                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 relative shadow-xl">
-                    <div class="flex text-yellow-500 mb-4 gap-1">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-gray-300 italic mb-6">"Tive um problema sério com cupins e eles resolveram tudo em tempo recorde. O técnico foi super profissional e explicou todo o processo. Recomendo demais!"</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center font-bold text-brand-500">RM</div>
-                        <div>
-                            <p class="text-white font-bold">Ricardo Menezes</p>
-                            <p class="text-gray-500 text-xs">Residencial - Moema</p>
-                        </div>
-                    </div>
+                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 shadow-xl">
+                    <div class="flex text-yellow-500 mb-4 gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-gray-300 italic mb-6">"Tive um problema sério com cupins e eles resolveram tudo em tempo recorde. Recomendo demais!"</p>
+                    <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center font-bold text-brand-500">RM</div><p class="text-white font-bold">Ricardo Menezes</p></div>
                 </div>
-
-                <!-- Depoimento 2 -->
-                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 relative shadow-xl">
-                    <div class="flex text-yellow-500 mb-4 gap-1">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-gray-300 italic mb-6">"Serviço impecável. Estávamos com uma infestação de baratas no restaurante e a Fedrix resolveu de forma rápida e segura. Não paramos a operação em nenhum momento."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center font-bold text-brand-500">AC</div>
-                        <div>
-                            <p class="text-white font-bold">Ana Cláudia</p>
-                            <p class="text-gray-500 text-xs">Proprietária - Restaurante</p>
-                        </div>
-                    </div>
+                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 shadow-xl">
+                    <div class="flex text-yellow-500 mb-4 gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-gray-300 italic mb-6">"Serviço impecável. Estávamos com uma infestação de baratas no restaurante e a Fedrix resolveu de forma rápida."</p>
+                    <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center font-bold text-brand-500">AC</div><p class="text-white font-bold">Ana Cláudia</p></div>
                 </div>
-
-                <!-- Depoimento 3 -->
-                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 relative shadow-xl">
-                    <div class="flex text-yellow-500 mb-4 gap-1">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-gray-300 italic mb-6">"Precisei de um desentupimento urgente no sábado à noite e fui atendida em menos de 1 hora. Preço justo e equipe muito educada. Nota 10!"</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center font-bold text-brand-500">FS</div>
-                        <div>
-                            <p class="text-white font-bold">Fernanda Souza</p>
-                            <p class="text-gray-500 text-xs">Apartamento - Pinheiros</p>
-                        </div>
-                    </div>
+                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 shadow-xl">
+                    <div class="flex text-yellow-500 mb-4 gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-gray-300 italic mb-6">"Precisei de um desentupimento urgente e fui atendida em menos de 1 hora. Preço justo!"</p>
+                    <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center font-bold text-brand-500">FS</div><p class="text-white font-bold">Fernanda Souza</p></div>
                 </div>
-
-                <!-- Depoimento 4 -->
-                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 relative shadow-xl">
-                    <div class="flex text-yellow-500 mb-4 gap-1">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-gray-300 italic mb-6">"Fizemos a limpeza da caixa d'água e a dedetização preventiva. Empresa séria, pontual e com certificado de garantia. Recomendo para condomínios."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center font-bold text-brand-500">JO</div>
-                        <div>
-                            <p class="text-white font-bold">Jorge Oliveira</p>
-                            <p class="text-gray-500 text-xs">Síndico - Condomínio</p>
-                        </div>
-                    </div>
+                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 shadow-xl">
+                    <div class="flex text-yellow-500 mb-4 gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-gray-300 italic mb-6">"Fizemos a limpeza da caixa d'água e a dedetização preventiva. Empresa séria e pontual."</p>
+                    <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center font-bold text-brand-500">JO</div><p class="text-white font-bold">Jorge Oliveira</p></div>
                 </div>
-
-                <!-- Depoimento 5 -->
-                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 relative shadow-xl">
-                    <div class="flex text-yellow-500 mb-4 gap-1">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-gray-300 italic mb-6">"Acabaram com o problema de ratos no meu forro. Eu já tinha tentado de tudo e nada funcionava. A Fedrix resolveu em uma única visita. Sensacional."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center font-bold text-brand-500">MP</div>
-                        <div>
-                            <p class="text-white font-bold">Marcos Paulo</p>
-                            <p class="text-gray-500 text-xs">Comercial - Centro</p>
-                        </div>
-                    </div>
+                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 shadow-xl">
+                    <div class="flex text-yellow-500 mb-4 gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-gray-300 italic mb-6">"Acabaram com o problema de ratos no meu forro. A Fedrix resolveu em uma única visita. Sensacional."</p>
+                    <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center font-bold text-brand-500">MP</div><p class="text-white font-bold">Marcos Paulo</p></div>
                 </div>
-
-                <!-- Depoimento 6 -->
-                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 relative shadow-xl">
-                    <div class="flex text-yellow-500 mb-4 gap-1">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-gray-300 italic mb-6">"O atendimento via WhatsApp foi muito rápido. Em menos de 5 minutos já tinham me passado o orçamento e o técnico estava a caminho. Empresa muito eficiente."</p>
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center font-bold text-brand-500">LB</div>
-                        <div>
-                            <p class="text-white font-bold">Letícia Barros</p>
-                            <p class="text-gray-500 text-xs">Residencial - Guarulhos</p>
-                        </div>
-                    </div>
+                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 shadow-xl">
+                    <div class="flex text-yellow-500 mb-4 gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-gray-300 italic mb-6">"O atendimento via WhatsApp foi muito rápido. Em menos de 5 minutos o técnico estava a caminho."</p>
+                    <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center font-bold text-brand-500">LB</div><p class="text-white font-bold">Letícia Barros</p></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ (Dúvidas Frequentes) -->
-    <section id="faq" class="py-20 bg-dark-950 section-bg">
+    <!-- FAQ (7 Perguntas) -->
+    <section id="faq" class="py-20 bg-dark-950">
         <div class="container mx-auto px-4 max-w-3xl">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-black text-white mb-4">Dúvidas Frequentes</h2>
-                <p class="text-gray-400">Tudo o que você precisa saber para sua segurança e tranquilidade.</p>
-            </div>
-
+            <div class="text-center mb-16"><h2 class="text-4xl font-black text-white mb-4">Dúvidas Frequentes</h2></div>
             <div class="space-y-4">
-                <details class="group bg-dark-900 border border-white/5 rounded-2xl p-6 open:bg-dark-800 transition-all cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-white text-lg list-none">
-                        Preciso sair de casa durante a dedetização?
-                        <span class="transition group-open:rotate-180">
-                            <i class="fa-solid fa-chevron-down text-brand-500"></i>
-                        </span>
-                    </summary>
-                    <p class="text-gray-400 mt-4 leading-relaxed">
-                        Na maioria dos casos, não é necessário sair por longos períodos. Utilizamos produtos modernos com baixo odor. Recomendamos apenas que crianças, idosos e pets fiquem fora do ambiente tratado por algumas horas (geralmente de 2 a 4 horas) por precaução.
-                    </p>
+                <details class="group bg-dark-900 border border-white/5 rounded-2xl p-6 cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-white text-lg list-none">Preciso sair de casa durante a dedetização? <i class="fa-solid fa-chevron-down text-brand-500"></i></summary>
+                    <p class="text-gray-400 mt-4">Na maioria dos casos, não é necessário sair por longos períodos. Utilizamos produtos modernos com baixo odor.</p>
                 </details>
-
-                <details class="group bg-dark-900 border border-white/5 rounded-2xl p-6 open:bg-dark-800 transition-all cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-white text-lg list-none">
-                        Quanto tempo dura a garantia do serviço?
-                        <span class="transition group-open:rotate-180">
-                            <i class="fa-solid fa-chevron-down text-brand-500"></i>
-                        </span>
-                    </summary>
-                    <p class="text-gray-400 mt-4 leading-relaxed">
-                        A garantia varia de acordo com o tipo de praga e o serviço realizado, podendo ir de 3 meses a 1 ano. Todos os nossos serviços acompanham certificado de garantia oficial e nota fiscal.
-                    </p>
+                <details class="group bg-dark-900 border border-white/5 rounded-2xl p-6 cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-white text-lg list-none">Quanto tempo dura a garantia do serviço? <i class="fa-solid fa-chevron-down text-brand-500"></i></summary>
+                    <p class="text-gray-400 mt-4">A garantia varia de acordo com o tipo de praga e o serviço realizado, podendo ir de 3 meses a 1 ano.</p>
                 </details>
-
-                <details class="group bg-dark-900 border border-white/5 rounded-2xl p-6 open:bg-dark-800 transition-all cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-white text-lg list-none">
-                        Os produtos são seguros para animais de estimação?
-                        <span class="transition group-open:rotate-180">
-                            <i class="fa-solid fa-chevron-down text-brand-500"></i>
-                        </span>
-                    </summary>
-                    <p class="text-gray-400 mt-4 leading-relaxed">
-                        Sim! Utilizamos produtos de linha profissional, devidamente registrados no Ministério da Saúde e na ANVISA, que são seguros para pets após o período de secagem e ventilação indicado pelo técnico.
-                    </p>
+                <details class="group bg-dark-900 border border-white/5 rounded-2xl p-6 cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-white text-lg list-none">Os produtos são seguros para pets? <i class="fa-solid fa-chevron-down text-brand-500"></i></summary>
+                    <p class="text-gray-400 mt-4">Sim! Utilizamos linhas de produtos liberados pela Anvisa, seguros para toda a família e animais de estimação.</p>
                 </details>
-
-                <details class="group bg-dark-900 border border-white/5 rounded-2xl p-6 open:bg-dark-800 transition-all cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-white text-lg list-none">
-                        Quanto tempo demora para fazer a dedetização?
-                        <span class="transition group-open:rotate-180">
-                            <i class="fa-solid fa-chevron-down text-brand-500"></i>
-                        </span>
-                    </summary>
-                    <p class="text-gray-400 mt-4 leading-relaxed">
-                        Para uma residência padrão, o processo leva em média de 40 a 60 minutos. Ambientes maiores ou comerciais podem levar mais tempo, dependendo do nível de infestação e do tamanho da área.
-                    </p>
+                <details class="group bg-dark-900 border border-white/5 rounded-2xl p-6 cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-white text-lg list-none">Qual o tempo de atendimento emergencial? <i class="fa-solid fa-chevron-down text-brand-500"></i></summary>
+                    <p class="text-gray-400 mt-4">Nossa meta de chegada em atendimentos de urgência em São Paulo e região é de até 40 minutos.</p>
                 </details>
-
-                <details class="group bg-dark-900 border border-white/5 rounded-2xl p-6 open:bg-dark-800 transition-all cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-white text-lg list-none">
-                        Vocês atendem aos finais de semana e feriados?
-                        <span class="transition group-open:rotate-180">
-                            <i class="fa-solid fa-chevron-down text-brand-500"></i>
-                        </span>
-                    </summary>
-                    <p class="text-gray-400 mt-4 leading-relaxed">
-                        Sim! Temos equipes de plantão 24 horas por dia, 7 dias por semana, inclusive em feriados. Emergências com pragas ou desentupimento não podem esperar.
-                    </p>
+                <details class="group bg-dark-900 border border-white/5 rounded-2xl p-6 cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-white text-lg list-none">Como é feito o pagamento? <i class="fa-solid fa-chevron-down text-brand-500"></i></summary>
+                    <p class="text-gray-400 mt-4">Aceitamos cartões de crédito, débito, PIX e faturamento para empresas (sob consulta).</p>
                 </details>
-
-                <details class="group bg-dark-900 border border-white/5 rounded-2xl p-6 open:bg-dark-800 transition-all cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-white text-lg list-none">
-                        Como funciona o orçamento? É cobrada a visita?
-                        <span class="transition group-open:rotate-180">
-                            <i class="fa-solid fa-chevron-down text-brand-500"></i>
-                        </span>
-                    </summary>
-                    <p class="text-gray-400 mt-4 leading-relaxed">
-                        A visita técnica e o orçamento são 100% gratuitos e sem compromisso. Nossa equipe vai até o local, avalia o problema e passa o valor na hora. Se você aprovar, já podemos realizar o serviço.
-                    </p>
+                <details class="group bg-dark-900 border border-white/5 rounded-2xl p-6 cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-white text-lg list-none">A empresa possui certificação? <i class="fa-solid fa-chevron-down text-brand-500"></i></summary>
+                    <p class="text-gray-400 mt-4">Sim, a Fedrix é devidamente licenciada e segue todas as normas da Vigilância Sanitária e órgãos ambientais.</p>
                 </details>
-
-                <details class="group bg-dark-900 border border-white/5 rounded-2xl p-6 open:bg-dark-800 transition-all cursor-pointer">
-                    <summary class="flex justify-between items-center font-bold text-white text-lg list-none">
-                        Quais as formas de pagamento?
-                        <span class="transition group-open:rotate-180">
-                            <i class="fa-solid fa-chevron-down text-brand-500"></i>
-                        </span>
-                    </summary>
-                    <p class="text-gray-400 mt-4 leading-relaxed">
-                        Aceitamos Pix, cartões de débito e crédito (com parcelamento), além de faturamento para empresas (sob consulta).
-                    </p>
+                <details class="group bg-dark-900 border border-white/5 rounded-2xl p-6 cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold text-white text-lg list-none">O orçamento tem custo? <i class="fa-solid fa-chevron-down text-brand-500"></i></summary>
+                    <p class="text-gray-400 mt-4">Não! Realizamos a visita técnica e o orçamento sem nenhum compromisso para o cliente.</p>
                 </details>
             </div>
         </div>
     </section>
 
-  
-    <!-- Rodapé Final CTA -->
-    <footer class="bg-dark-950 py-16 border-t border-white/5 text-center relative overflow-hidden">
-        <div class="absolute inset-0 bg-brand-500/5 pointer-events-none"></div>
-        <div class="container mx-auto px-4 relative z-10">
-            <h2 class="text-3xl md:text-4xl font-black text-white mb-6">Pronto para resolver seu problema?</h2>
-            <p class="text-gray-400 mb-8 max-w-xl mx-auto">Não espere o problema se agravar. Entre em contato agora e receba um orçamento sem compromisso em minutos.</p>
-            <a href="https://wa.me/5511949251470" target="_blank" class="inline-flex items-center justify-center gap-3 bg-brand-600 hover:bg-brand-500 text-white py-4 px-8 md:px-12 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-brand-500/25 mb-12">
-                <i class="fa-brands fa-whatsapp text-2xl"></i> Falar com um Especialista Agora
-            </a>
-            
-            <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-                <p><strong>FEDRIX</strong> Controle de Pragas. Todos os direitos reservados.</p>
-                <p>Atendimento 24 horas em São Paulo e Grande SP.</p>
-            </div>
+    <footer class="py-12 bg-dark-950 border-t border-white/5 text-center">
+        <div class="container mx-auto px-4 flex flex-col items-center gap-6">
+            <div class="flex items-center gap-2 text-2xl font-black text-white uppercase"><i class="fa-solid fa-shield-bug text-brand-500"></i> FEDRIX</div>
+            <p class="text-gray-500 text-sm">© 2026 Fedrix Dedetizadora e Desentupidora. Todos os direitos reservados.</p>
         </div>
     </footer>
 </body>
